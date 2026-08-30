@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LuxuryStay - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .login-page {
+            min-height: 75vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 50px 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .login-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-title .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .login-title h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .login-title p {
+            color: #666;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #f59e0b;
+        }
+
+        .login-button {
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background-color: #f59e0b;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #d97706;
+        }
+
+        .register-text {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #666;
+        }
+
+        .register-text a {
+            color: #d97706;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+        .login-message {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            .login-container {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🏨 LuxuryStay
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="rooms.html">Rooms</a>
+                </li>
+
+                <li>
+                    <a href="booking.html">Booking</a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">My Bookings</a>
+                </li>
+
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Login Page -->
+    <main class="login-page">
+
+        <div class="login-container">
+
+
+            <!-- Title -->
+            <div class="login-title">
+
+                <div class="icon">
+                    🔐
+                </div>
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Login to manage your bookings.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    class="login-button">
+
+                    Login
+
+                </button>
+
+            </form>
+
+
+            <!-- Message -->
+            <div
+                id="loginMessage"
+                class="login-message">
+            </div>
+
+
+            <!-- Register -->
+            <div class="register-text">
+
+                Don't have an account?
+
+                <a href="#" id="registerLink">
+                    Register
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>🏨 LuxuryStay</h3>
+
+            <p>
+                Your comfort is our priority.
+            </p>
+
+            <p>
+                © 2026 LuxuryStay. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const registerLink =
+            document.getElementById("registerLink");
+
+
+        // Login
+        loginForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document.getElementById("email").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+
+                if (password.length < 6) {
+
+                    showMessage(
+                        "Password must contain at least 6 characters.",
+                        false
+                    );
+
+                    return;
+                }
+
+
+                // Save logged-in user
+                localStorage.setItem(
+                    "loggedInUser",
+                    email
+                );
+
+
+                showMessage(
+                    "✅ Login successful! Welcome to LuxuryStay.",
+                    true
+                );
+
+
+                // Redirect after login
+                setTimeout(function() {
+
+                    window.location.href =
+                        "rooms.html";
+
+                }, 1500);
+
+            }
+        );
+
+
+        // Register button
+        registerLink.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Registration page will be added in the next step."
+                );
+
+            }
+        );
+
+
+        // Show message
+        function showMessage(message, success) {
+
+            loginMessage.style.display =
+                "block";
+
+            loginMessage.textContent =
+                message;
+
+
+            if (success) {
+
+                loginMessage.style.backgroundColor =
+                    "#d1fae5";
+
+                loginMessage.style.color =
+                    "#065f46";
+
+            } else {
+
+                loginMessage.style.backgroundColor =
+                    "#fee2e2";
+
+                loginMessage.style.color =
+                    "#991b1b";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
