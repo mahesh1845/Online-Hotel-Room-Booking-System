@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LuxuryStay - Rooms</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .rooms-page {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 30px;
+        }
+
+        .rooms-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .rooms-title h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .rooms-title p {
+            color: #666;
+        }
+
+        .room-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .room-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .room-content {
+            padding: 25px;
+        }
+
+        .room-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .room-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .room-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .room-features li {
+            margin: 7px 0;
+        }
+
+        .room-price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .room-price span {
+            font-size: 14px;
+            font-weight: normal;
+            color: #777;
+        }
+
+        @media (max-width: 900px) {
+            .room-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .room-container {
+                grid-template-columns: 1fr;
+            }
+
+            .rooms-page {
+                padding: 0 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🏨 LuxuryStay
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="bookings.html">My Bookings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Rooms Section -->
+    <main class="rooms-page">
+
+        <div class="rooms-title">
+
+            <h1>Our Rooms</h1>
+
+            <p>
+                Choose the perfect room for your stay.
+            </p>
+
+        </div>
+
+
+        <div class="room-container">
+
+
+            <!-- Room 1 -->
+            <div class="room-card">
+
+                <img
+                    src="images/deluxe.jpg"
+                    alt="Deluxe Room"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Deluxe Room</h2>
+
+                    <p class="room-description">
+                        A comfortable room with modern facilities
+                        for a relaxing stay.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ King Size Bed</li>
+                        <li>📶 Free Wi-Fi</li>
+                        <li>❄️ Air Conditioning</li>
+                        <li>🚿 Private Bathroom</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹2,500 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Deluxe%20Room&price=2500"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room 2 -->
+            <div class="room-card">
+
+                <img
+                    src="images/suite.jpg"
+                    alt="Luxury Suite"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Luxury Suite</h2>
+
+                    <p class="room-description">
+                        Spacious luxury suite with premium
+                        facilities and elegant interiors.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ King Size Bed</li>
+                        <li>🛋️ Separate Living Room</li>
+                        <li>📶 Free Wi-Fi</li>
+                        <li>🛁 Luxury Bathroom</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹4,500 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Luxury%20Suite&price=4500"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room 3 -->
+            <div class="room-card">
+
+                <img
+                    src="images/family.jpg"
+                    alt="Family Room"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Family Room</h2>
+
+                    <p class="room-description">
+                        A spacious room designed for families
+                        and groups.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ Two Double Beds</li>
+                        <li>📶 Free Wi-Fi</li>
+                        <li>❄️ Air Conditioning</li>
+                        <li>📺 Smart TV</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹3,500 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Family%20Room&price=3500"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room 4 -->
+            <div class="room-card">
+
+                <img
+                    src="images/single.jpg"
+                    alt="Single Room"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Single Room</h2>
+
+                    <p class="room-description">
+                        Affordable and comfortable room for
+                        solo travelers.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ Single Bed</li>
+                        <li>📶 Free Wi-Fi</li>
+                        <li>❄️ Air Conditioning</li>
+                        <li>🚿 Private Bathroom</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹1,500 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Single%20Room&price=1500"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room 5 -->
+            <div class="room-card">
+
+                <img
+                    src="images/double.jpg"
+                    alt="Double Room"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Double Room</h2>
+
+                    <p class="room-description">
+                        Comfortable room suitable for couples
+                        or two guests.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ Double Bed</li>
+                        <li>📶 Free Wi-Fi</li>
+                        <li>❄️ Air Conditioning</li>
+                        <li>📺 Smart TV</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹2,800 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Double%20Room&price=2800"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room 6 -->
+            <div class="room-card">
+
+                <img
+                    src="images/presidential.jpg"
+                    alt="Presidential Suite"
+                    class="room-image"
+                >
+
+                <div class="room-content">
+
+                    <h2>Presidential Suite</h2>
+
+                    <p class="room-description">
+                        Our most luxurious room with premium
+                        services and beautiful interiors.
+                    </p>
+
+                    <ul class="room-features">
+                        <li>🛏️ King Size Bed</li>
+                        <li>🛋️ Large Living Room</li>
+                        <li>🏊 Private Pool</li>
+                        <li>🍽️ Private Dining</li>
+                    </ul>
+
+                    <div class="room-price">
+                        ₹8,000 <span>/ night</span>
+                    </div>
+
+                    <a href="booking.html?room=Presidential%20Suite&price=8000"
+                       class="btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>🏨 LuxuryStay</h3>
+
+            <p>Your comfort is our priority.</p>
+
+            <p>© 2026 LuxuryStay. All Rights Reserved.</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
